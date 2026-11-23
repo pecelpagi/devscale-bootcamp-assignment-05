@@ -1,0 +1,16 @@
+name: study-buddy-dev
+
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - "5545:5432"
+    environment:
+      POSTGRES_USER: studybuddy
+      POSTGRES_PASSWORD: studybuddy
+      POSTGRES_DB: studybuddy
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
