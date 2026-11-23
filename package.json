@@ -1,0 +1,18 @@
+{
+  "name": "study-buddy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:api": "pnpm --filter @study-buddy/api dev",
+    "dev:web": "pnpm --filter @study-buddy/web dev",
+    "db:generate": "pnpm --filter @study-buddy/db db:generate",
+    "db:migrate": "pnpm --filter @study-buddy/db db:migrate",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "evals": "pnpm -C packages/agents exec node --env-file-if-exists=../../.env --import tsx src/evals/tutor.ts"
+  },
+  "devEngines": {
+    "packageManager": { "name": "pnpm", "version": "11.23.0", "onFail": "download" }
+  },
+  "packageManager": "pnpm@11.23.0"
+}
